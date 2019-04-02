@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BoardService } from '../board.service';
+import { Board } from '../model/Board';
 
 @Component({
   selector: 'app-home-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  private boards: Board[];
+
+  constructor(
+    private service: BoardService,
+  ) { }
 
   ngOnInit() {
+    this.boards = this.service.getDate();
   }
 
 }
