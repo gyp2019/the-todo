@@ -1,4 +1,4 @@
 export class SubTask {
-  id: string;
+  id: number;
   title: string;
 }

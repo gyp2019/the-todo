@@ -1,8 +1,8 @@
 import { SubTask } from './SubTask';
 
 export class Task {
-  id: string;
+  id: number;
   titls: string;
   subTasks: SubTask[];
-  subtaskHeaderId: string;
+  subtaskHeaderId: number;
 }
