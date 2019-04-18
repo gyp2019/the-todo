@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { Promise } from 'q';
+
 import { Board } from './model/Board';
 import { Task } from './model/Task';
 import { SubTask } from './model/SubTask';
@@ -9,7 +13,9 @@ import { SubTask } from './model/SubTask';
 export class BoardService {
   private boards: Board[];
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) { }
 
   getDate(): Board[] {
 
@@ -34,5 +40,9 @@ export class BoardService {
     this.boards.push(emptyBoard);
 
     return this.boards;
+  }
+
+  getBoardsWithPromises(): Promise<Board[]> {
+
   }
 }
